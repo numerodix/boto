@@ -139,7 +139,7 @@ class SecurityGroup(TaggedEC2Object):
                                     if grant.cidr_ip == cidr_ip:
                                         target_grant = grant
                         if target_grant:
-                            rule.grants.remove(target_grant, dry_run=dry_run)
+                            rule.grants.remove(target_grant)
             if len(rule.grants) == 0:
                 self.rules.remove(target_rule)
 
